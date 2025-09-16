@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Click Playground</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2rem;
+      text-align: center;
+      color: #1e3c72;
+    }
+    p {
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 600px;
+    }
+    .interactive-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .button-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 150px;
+    }
+    .button-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #1e3c72;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #3a6ea5;
+    }
+    .popup-message {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #555;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Fun Click Playground!</h1>
+  <p>Click the buttons below for fun surprises! Every click triggers a unique interaction.</p>
+
+  <div class="interactive-section">
+    <div class="button-card" onclick="funClick(1);">
+      <h2>Button 1</h2>
+      <button>Click Me!</button>
+      <div class="popup-message" id="msg1"></div>
+    </div>
+    <div class="button-card" onclick="funClick(2);">
+      <h2>Button 2</h2>
+      <button>Click Me!</button>
+      <div class="popup-message" id="msg2"></div>
+    </div>
+    <div class="button-card" onclick="funClick(3);">
+      <h2>Button 3</h2>
+      <button>Click Me!</button>
+      <div class="popup-message" id="msg3"></div>
+    </div>
+    <div class="button-card" onclick="funClick(4);">
+      <h2>Button 4</h2>
+      <button>Click Me!</button>
+      <div class="popup-message" id="msg4"></div>
+    </div>
+  </div>
+
+  <!-- Propeller Ads Code -->
+  <!-- Paste your Propeller Ads script below this comment -->
+  <!-- Example:
+  <script type="text/javascript" src="YOUR_PROP_ADS_SCRIPT.js"></script>
+  -->
+
+  <footer>
+    &copy; 2025 Fun Click Playground. All rights reserved.
+  </footer>
+
+  <script>
+    function funClick(button) {
+      let messages = [
+        "You found a hidden coin!",
+        "Surprise! A funny fact: Cats sleep 70% of their lives.",
+        "Boom! You earned 10 imaginary points!",
+        "Did you know? The shortest war in history lasted 38 minutes!"
+      ];
+      let colors = ["#ff6b6b", "#6bc1ff", "#ffd36b", "#a56bff"];
+      let msgElement = document.getElementById('msg' + button);
+      let randomIndex = Math.floor(Math.random() * messages.length);
+      msgElement.innerText = messages[randomIndex];
+      msgElement.style.color = colors[randomIndex];
+    }
+  </script>
+</body>
+</html>
